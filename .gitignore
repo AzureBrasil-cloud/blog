@@ -10,6 +10,12 @@
 *.userosscache
 *.sln.docstates
 
+# Statiq folders
+cache/
+output/
+temp/
+wwwroot/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
