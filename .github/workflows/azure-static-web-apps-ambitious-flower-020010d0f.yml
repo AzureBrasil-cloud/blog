@@ -18,6 +18,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.201
+      - run: dotnet restore src/src.csproj
+      - run: dotnet build --configuration Release --no-restore src/src.csproj
+      - run: dotnet run --output output --project src/src.csproj
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
